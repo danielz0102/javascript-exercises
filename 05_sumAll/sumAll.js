@@ -1,4 +1,11 @@
 const sumAll = function(start, end) {
+    if (start < 0 || end < 0
+        || start % 1 !== 0
+        || end % 1 !== 0
+        || start !== Number(start)
+        || end !== Number(end)
+    ) return 'ERROR'
+
     const difference = Math.abs(end - start)
     let result = 0
     let numbers = []
