@@ -1,13 +1,15 @@
 const sumAll = function(start, end) {
-    const difference = end - start
-    let numbers = [start]
+    const difference = Math.abs(end - start)
     let result = 0
+    let numbers = []
+
+    start < end ? numbers[0] = start : numbers[0] = end
 
     for (let i = 1; i < difference; i++) {
-        numbers.push(start + i)
+        numbers.push(numbers[0] + i)
     }
 
-    numbers.push(end)
+    numbers.includes(end) ? numbers.push(start) : numbers.push(end)
 
     numbers.forEach(n => {
         result += n
